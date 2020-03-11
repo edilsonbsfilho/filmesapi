@@ -9,6 +9,12 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+/**
+ * Classe representante da entidade Filme
+ * 
+ * @author Edilson
+ *
+ */
 @Entity
 @Table(name = "filme")
 public class Filme {

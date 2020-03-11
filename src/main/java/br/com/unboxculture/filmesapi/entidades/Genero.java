@@ -11,6 +11,12 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+/**
+ * Classe representante da entidade Genero
+ * 
+ * @author Edilson
+ *
+ */
 @Entity
 @Table(name = "genero")
 public class Genero {
@@ -23,7 +29,7 @@ public class Genero {
 	@Column(name = "descricao", nullable = false)
 	private String descricao;
 	
-	@OneToMany(mappedBy = "genero", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "genero", fetch = FetchType.LAZY)
 	private List<Filme> filmes;
 
 	public long getId() {

@@ -11,6 +11,12 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.unboxculture.filmesapi.entidades.Genero;
 import br.com.unboxculture.filmesapi.servicos.GeneroServico;
 
+/**
+ * Classe responsável por fornecer os serviços relacionados aos gêneros.
+ * 
+ * @author Edilson
+ *
+ */
 @RestController
 @RequestMapping("genero")
 public class GeneroControlador {
@@ -18,12 +24,18 @@ public class GeneroControlador {
 	@Autowired
 	private GeneroServico generoServico;
 	
-	@GetMapping("/codigo/{id_genero}")
+	/***
+	 * @see GeneroServico#obter(Long)
+	 */
+	@GetMapping("/{id_genero}")
 	public Genero obter(@PathVariable(name = "id_genero") Long id) {
 		return generoServico.obter(id);
 	}
 	
-	@GetMapping("/todos")
+	/***
+	 * @see GeneroServico#listar()
+	 */
+	@GetMapping
 	public List<Genero> listar() {
 		return generoServico.listar();
 	}
